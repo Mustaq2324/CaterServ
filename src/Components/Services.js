@@ -17,7 +17,7 @@ function Services() {
       <div>
         <div className="container mx-auto grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4 mt-10">
         
-            <div data-aos="fade-down"  className="  mx-auto w-[300px] h-[350px] gap-4 text-4xl shadow-xl ">
+            <div data-aos="fade-down"  className="  mx-auto w-[300px] h-[350px] gap-4 group text-4xl shadow-xl ">
               <div className="w-[300px] h-[0px] group-hover:bg-[#D4A762] group-hover:h-full transition-all duration-[1500ms] p-5 flex flex-col gap-5 rounded-xl items-center">
              <div> <FaCheese className="text-[#D4A762] text-8xl group-hover:text-black transition-all duration-[1500ms]" /></div>
               <h1 className="text-3xl">Wedding Services</h1>

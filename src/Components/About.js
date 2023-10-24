@@ -2,14 +2,31 @@ import about from "../img/about.jpg";
 import { FaShare,FaArrowRight} from "react-icons/fa";
 import {AiOutlineArrowUp} from "react-icons/ai"
 import f from "aos"
+import { useEffect, useState } from "react";
 function About() {
   f.init({duration:1000})
-
+  const[top,setTop]=useState(false)
+  useEffect(()=>{
+    window.addEventListener("scroll",()=>{
+      if(window.scrollY > 100){
+        setTop(true)
+      }
+      else{
+        setTop(false)
+      }
+    })
+  })
+const scrollup=()=>{
+window.scrollTo({
+  top:0,
+  behavior:"smooth"
+})
+}
   return (
     <div className="container mt-5 ">
-      <div className="bg-[#d4a762] rounded-full flex items-center justify-center fixed z-[99] bottom-10 right-10 cursor-pointer  p-2">
-      <AiOutlineArrowUp className="text-black text-lg"/>
-      </div>
+     {top ? <div onClick={scrollup} className="bg-[#d4a762] md:p-3 md:text-xl rounded-full flex items-center justify-center fixed z-[99] bottom-10 right-10 cursor-pointer  p-2">
+      <AiOutlineArrowUp className="text-black text-lg md:text-xl"/>
+      </div> :<div></div>}
       <div className="grid grid-cols-1 lg:grid-cols-2  ">
         <div className="flex  items-center justify-center md:p-20 ">
           <img data-aos="zoom-in" src={about} className="rounded-xl  "/>
